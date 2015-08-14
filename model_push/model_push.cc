@@ -50,13 +50,13 @@ namespace gazebo
 
         yarp::os::Bottle *input = port.read(false);
         if (input!=NULL) {
-            std::cout << "got " << input->toString().c_str() << std::endl;
+            // std::cout << "got " << input->toString().c_str() << std::endl;
             x_pos = input->get(0).asDouble();
             y_pos = input->get(1).asDouble();
             z_pos = input->get(2).asDouble();
-            std::cout << "Old world pose: " << this->model->GetWorldPose() << std::endl;
+            // std::cout << "Old world pose: " << this->model->GetWorldPose() << std::endl;
             this->model->SetWorldPose(math::Pose(x_pos, y_pos, z_pos, 0.0, 0.0, 0.0));
-            std::cout << "New world pose: " << this->model->GetWorldPose() << std::endl;
+            // std::cout << "New world pose: " << this->model->GetWorldPose() << std::endl;
 
         }
 
